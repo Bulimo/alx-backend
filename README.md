@@ -6,6 +6,7 @@ Each folder in the repository covers particular concepts in back-end
 development
 
     . 0x00-pagination
+    . 0x01-caching
 
 ## Authors
 
