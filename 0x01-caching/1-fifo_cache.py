@@ -26,7 +26,7 @@ class FIFOCache(BaseCaching):
         If the number of items is higher than BaseCaching.MAX_ITEMS:
             discard the first item put in cache (FIFO algorithm)
         """
-        if key is not None:
+        if key is not None and item is not None:
             if key in self.cache_data or \
                     len(self.cache_data) < BaseCaching.MAX_ITEMS:
                 self.cache_data[key] = item
@@ -42,6 +42,6 @@ class FIFOCache(BaseCaching):
         If key is None or if the key doesn't exist
         in self.cache_data, return None
         """
-        if key is None:
-            return None
-        return self.cache_data.get(key)
+        if key is not None and key in self.cache_data:
+            return self.cache_data.get(key)
+        return None
