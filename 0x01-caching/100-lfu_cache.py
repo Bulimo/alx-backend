@@ -78,7 +78,7 @@ class LFUCache(BaseCaching):
         #     count += 1
         #     ntime = time.time_ns()
         #     self.__lfu_dict[key] = (count, ntime)
-        if key is not None:
+        if key is not None and item is not None:
             if key in self.cache_data or \
                     len(self.cache_data) < BaseCaching.MAX_ITEMS:
                 self.cache_data[key] = item

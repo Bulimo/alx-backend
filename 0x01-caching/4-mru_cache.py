@@ -28,7 +28,7 @@ class MRUCache(BaseCaching):
         If the number of items is higher than BaseCaching.MAX_ITEMS:
             discard the most recently used item (MRU algorithm)
         """
-        if key is not None:
+        if key is not None and item is not None:
             # print("printing time_dict\n{}".format(self.__time_dict))
             if key in self.cache_data or \
                     len(self.cache_data) < BaseCaching.MAX_ITEMS:
